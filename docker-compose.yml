@@ -14,3 +14,13 @@ services:
       - '3000:3000'
     environment:
       - NODE_ENV=production
+
+  rpc:
+    container_name: lnhw-rpc
+    build:
+      context: .
+      dockerfile: ./rpc/Dockerfile
+    volumes:
+      - '.:/usr/src/rpc'
+    ports:
+      - '5000:5000'
